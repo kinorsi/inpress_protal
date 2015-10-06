@@ -17,6 +17,41 @@ body{
 .br{
 	border: red 1px solid;
 }
+
+.index-banner{
+	position: relative;
+}
+.index-banner .btn{
+	font-weight: bold;
+	background-color: yellow;
+	padding-left: 40px;
+	padding-right: 40px;
+	position: absolute;
+	top: 75%;
+	left: 30%;
+	font-size: 16;
+}
+.index-setting{
+	position: relative;
+}
+.index-setting .rolling{
+	position: absolute;
+	top: 0;
+	opacity: 0.6;
+	padding-top: 6px;
+	background-color: red;
+}
+.index-setting .content{
+	font-weight: bold;
+	color: black;
+}
+.index-setting .info{
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+	font-style: italic;
+}
+
 .btn.active{
 	color: red;
 }
@@ -74,9 +109,21 @@ body{
 	margin-top: 6px;
 }
 
+
 /*author*/
+.cansai{
+	position: relative;
+}
+.cansai>img{
+	position: absolute;
+	top: 0;
+}
 .author{
 	position: relative;
+	margin-top: 80px;
+}
+.author #sharebtns{
+	margin-top: 20px;
 }
 .author .info{
 	margin-bottom: 20px;
@@ -95,7 +142,6 @@ body{
 }
 .author .arts{
 	margin-top: 30px;
-	background-color: white;
 	position: relative;
 }
 .author .arts .title{
