@@ -93,7 +93,7 @@
                   <td>还剩XX名</td>
                 </tr>
               </table>
-              <button class="btn btn-warning btn-lg">点我抽奖</button>
+              <button class="btn btn-warning btn-lg" id="choujiang">点我抽奖</button>
             </div>
         </div>
       </div>
@@ -106,13 +106,27 @@
 
       <script type="text/javascript">
         $(function(){
-          $('.btn').click(function(){
-            $('#modal-yes').modal({backdrop: 'static'});//中奖对话框
-            //$('#modal-not').modal({backdrop: 'static'});//表示没有中奖的对话框。
-          });
 
           $('#ok').click(function(){
             location.href="artinfo.html";
+          });
+
+          $('#choujiang').click(function(){
+            $.ajax({
+              url: '',
+              type: 'POST',
+              success: function(){
+                var bingo = true;
+                if(true===bingo){
+                  $('#modal-yes').modal({backdrop: 'static'});//中奖对话框
+                }else{
+                  $('#modal-not').modal({backdrop: 'static'});//表示没有中奖的对话框。
+                }
+              },
+              error: function(){
+                alert('出错了'); 
+              }
+            });
           });
         });
       </script>

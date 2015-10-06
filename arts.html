@@ -91,6 +91,20 @@
         $('.btn-order').removeClass('active');
         $(this).addClass('active');
       });
+
+
+      $('.btn-vote').click(function(){
+        $.ajax({
+          url: '',
+          type: 'POST',
+          success: function(){
+            alert('success');
+          },
+          error: function(){
+            alert('error')
+          }
+        });
+      });
     });
     </script>
   </body>
