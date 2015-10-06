@@ -17,6 +17,20 @@ body{
 .br{
 	border: red 1px solid;
 }
+.img-preview{
+	width: 100%;
+	height: 100%;
+}
+.img-upload{
+	display: none;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+.modal-backdrop {
+   background-color: black;
+   opacity:0.85 !important;
+}
 .subtitle{
 	font-size: 20px;
 	background-size: 100%;
@@ -57,7 +71,7 @@ body{
 }
 .index-setting .content{
 	font-weight: bold;
-	color: black;
+	color: white;
 }
 .index-setting .info{
 	position: absolute;
@@ -69,6 +83,16 @@ body{
 	bottom: 10px;
 	left: 20px;
 	font-style: italic;
+}
+.info2 .place{
+	padding-left: 26px;
+}
+.info2 .btn{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.info .place{
+	padding-left: 26px;
 }
 .btn.active{
 	color: red;
@@ -118,6 +142,9 @@ body{
 .art .info .name{
 	font-weight: bold; 
 	font-size: 16px;
+}
+.art .info .piao{
+	color: red;
 }
 .art .info .artno{
 	font-size: 10px;
@@ -197,6 +224,9 @@ input[type="text"]:focus{
 	border-bottom: solid 1px red;
 	outline-style: none;
 }
+input[type="checkbox"]{
+	border-color: red;
+}
 
 .postpic{
 	border: dashed 1px red;
@@ -228,7 +258,7 @@ table{
 .price-title{
 	color: white;
 	font-size: 30px;
-	margin-bottom: 25px;
+	margin-bottom: 18px;
 	position: relative;
 	display: block;
 }
@@ -280,7 +310,7 @@ table{
 	font-size: 18px;
 }
 .modal-body {
-	margin: 45% 0 ;
+	margin: 20% 0 ;
 }
 .modal .btn{
 	color: black;
