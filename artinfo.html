@@ -37,8 +37,8 @@
               </div>
             </div>
             <div id="sharebtns">
-              <button class="btn btn-danger btn-block">去微信/QQ拉票</button>
-              <button class="btn btn-warning btn-block">去抽奖 </button>
+              <button id="share" class="btn btn-danger btn-block">去微信/QQ拉票</button>
+              <button id="choujiang" class="btn btn-danger btn-block">去抽奖</button>
             </div>
 
             <div class="arts">
@@ -61,9 +61,16 @@
     <script>
       $(function(){
         $('#sharebtns').click(function(){
-          $(this).hide();
+          // $(this).hide();
         });
 
+        $('#share').click(function() {
+          location.href="share.html";
+        });
+
+        $('#choujiang').click(function(){
+          location.href="choujiang.html";
+        });
       });
     </script>
   </body>

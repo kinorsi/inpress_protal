@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="css/main.css">
     <style>
     body{
-      background-color: white;
+      background-image: url(image/bg.png);
+      background-repeat: repeat-y;
+      background-size: 100%;
     }
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -30,15 +32,25 @@
       </div>
 
       <div class="row index-setting">
-        <img src="image/jiangxiang.png" class="img-fit" alt="">
-        <div class="rolling">
+        <!-- <img src="image/jiangxiang.png" class="img-fit" alt=""> -->
+        <div class="rolling2">
           <marquee behavior="" direction="left">
             <span class="content">
             恭喜王老师中尖叫奖 200元电话费恭喜王老师中尖叫奖 200元电话费恭喜王老师中尖叫奖 200元电话费恭喜王老师中尖叫奖 200元电话费
             </span>
           </marquee>
         </div>
-        <div class="info">
+        <span class="subtitle" style="background-image: url(image/subtitle_bg.png);">大赛奖项</span>
+        <div class="row text-center">
+          <div class="col-xs-4">
+            dd
+          </div>
+          <div class="col-xs-4">
+            dd
+          </div>
+          <div class="col-xs-4"></div>
+        </div>
+        <div class="info2">
           <div><a href="rule.html">查看参赛规则 &gt;</a></div>
           <div><a href="arts.html">查看全部 <span>200</span> 件参赛作品 &gt;</a></div>
         </div>
@@ -52,13 +64,5 @@
     <script src="lib/jquery/jquery-1.11.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <script>
-      $(function(){
-        $('.btn').click(function(){
-          location.href="postart.html";
-        });
-
-      });
-    </script>
   </body>
 </html>

@@ -17,6 +17,14 @@ body{
 .br{
 	border: red 1px solid;
 }
+.subtitle{
+	font-size: 20px;
+	background-size: 100%;
+	padding: 20px;
+	color: white;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
 
 .index-banner{
 	position: relative;
@@ -41,6 +49,12 @@ body{
 	padding-top: 6px;
 	background-color: red;
 }
+.index-setting .rolling2{
+	top: 0;
+	opacity: 0.6;
+	padding-top: 6px;
+	background-color: red;
+}
 .index-setting .content{
 	font-weight: bold;
 	color: black;
@@ -51,7 +65,11 @@ body{
 	left: 20px;
 	font-style: italic;
 }
-
+.index-setting .info2{
+	bottom: 10px;
+	left: 20px;
+	font-style: italic;
+}
 .btn.active{
 	color: red;
 }
@@ -113,6 +131,8 @@ body{
 /*author*/
 .cansai{
 	position: relative;
+	background-repeat: repeat-y;
+	background-size: 100%;
 }
 .cansai>img{
 	position: absolute;
@@ -120,7 +140,7 @@ body{
 }
 .author{
 	position: relative;
-	margin-top: 80px;
+	margin-top: 40px;
 }
 .author #sharebtns{
 	margin-top: 20px;
@@ -143,6 +163,7 @@ body{
 .author .arts{
 	margin-top: 30px;
 	position: relative;
+	background-color: white;
 }
 .author .arts .title{
 	font-size: 18px;

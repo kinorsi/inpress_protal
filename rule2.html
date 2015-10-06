@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>投稿：填写参赛作品信息</title>
+    <title>参赛规则</title>
 
     <!-- Bootstrap -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <style type="text/css">
-      body{
-        background-color: white;
-      }
+    <style>
+    body{
+      background-color: white;
+    }
     </style>
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,31 +24,22 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <input type="text" class="form-control" placeholder="请录入姓名">
-          <input type="text" class="form-control" placeholder="请录入手机号码">
-          <input type="text" class="form-control" placeholder="幼儿园名称：例如朝阳区吕家园幼儿园">
-          <input type="text" class="form-control" placeholder="请录入班级：例如小一班">
-        </div>
+      <div class="rule">
+        <h4>大赛时间计划</h4>
+        <table>
+          <tr>
+            <td><span class="order">01</span></td>
+            <td>2015年8月18日 - 10月30日<br>下载幼师宝典APP提交参赛作品，网络投票选取30件人气作品、人工筛选30件作品入围</td>
+          </tr>
+        </table>
       </div>
 
-      <div class="row">
-        <div class="col-xs-12" style="margin-top:40px;">
-          <button class="btn btn-danger btn-block">确定</button>
-        </div>
-      </div>
+
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="lib/jquery/jquery-1.11.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-      $('.btn').click(function(){
-        location.href="artinfo.html";
-      }); 
-    </script>
   </body>
 </html>

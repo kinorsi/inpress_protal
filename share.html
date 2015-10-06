@@ -25,10 +25,10 @@
   <body>
     <div class="modal">
       <div class="text-right">
-        <img src="image/arrow.png" alt="">
+        <img src="image/arrow.png" alt="" data-dismiss="modal">
       </div>
       <div class="text-center">
-        <img src="image/shuomingwenzi.png" width="50%" alt="">
+        <img src="image/shuomingwenzi.png" width="100%" alt="" data-dismiss="modal">
       </div>
 
     </div>
@@ -38,10 +38,11 @@
           <button class="btn">了解详情</button>
       </div>
 
-      <div class="row cansai">
-        <img src="image/cansai_bg.png" class="img-fit" alt="">
+      <div class="row cansai" style="background-image: url(image/bg.png);">
+        <!-- <img src="image/cansai_bg.png" class="img-fit" alt=""> -->
         <div class="col-md-12">
           <div class="author text-center">
+            <span class="subtitle" style="background-image: url(image/subtitle_bg.png);">参赛作品</span>
             <div class="info">
               <div>
                 <span class="name">张三就</span>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -92,6 +93,9 @@
     <script>
     $(function(){
       $('.modal').modal();
+      $('.modal').click(function(){
+        $(this).modal('hide');
+      });
     });
     </script>
   </body>
