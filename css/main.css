@@ -1,0 +1,241 @@
+.redtext{
+    color: red;
+}
+
+.img-fit{
+    width: 100%;
+}
+
+body{
+	font-family: 微软雅黑;
+	background-color: #eeeeee;
+}
+
+.bg{
+	border: green 1px solid;
+}
+.br{
+	border: red 1px solid;
+}
+.btn.active{
+	color: red;
+}
+
+.btn-vote{
+	color: red;
+	border-color: red;
+}
+
+.btn-order-left{
+	border-left: none;
+	border-top: none;
+	border-bottom: none;
+}
+
+.btn-order-right{
+	border-right: none;
+	border-top: none;
+	border-bottom: none;
+}
+
+/*art info block*/
+.art{
+	background-color: #ffffff;
+	margin-top: 10px;
+	padding-bottom: 4px;
+	position: relative;
+}
+.art .order{
+	position: absolute; 
+	top: 40px; 
+	right: 10px;
+	color: white;
+	background-color: #000000;
+	opacity: 0.5;
+	padding: 2px;
+	border-radius: 4px;
+}
+.art .upblank{
+	height: 30px;
+}
+.art .info{
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+.art .info .name{
+	font-weight: bold; 
+	font-size: 16px;
+}
+.art .info .artno{
+	font-size: 10px;
+}
+.art .info2{
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+
+/*author*/
+.author{
+	position: relative;
+}
+.author .info{
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.author .btn-warning{
+	color: red;
+}
+.author .name{
+	font-size: 18px;
+	font-weight: bold;
+}
+.author .address{
+	font-size: 14px;
+	color: #666666;
+}
+.author .arts{
+	margin-top: 30px;
+	background-color: white;
+	position: relative;
+}
+.author .arts .title{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	padding-top: 10px;
+}
+.author .arts .title:after{
+	border-bottom: solid 2px #cccccc;
+	content: '';
+	width: 80%;
+	left: 10%;
+	top: 40px;
+	position: absolute;
+}
+.author .arts img{
+	margin-bottom: 10px;
+}
+
+input[type="text"]{
+	border: none;
+	border-radius: 0;
+	border-bottom: solid 1px #aaaaaa;
+}
+
+input[type="text"]{
+	font-size: 16px;
+	height: 36px;
+}
+input[type="text"]:focus{
+	border-bottom: solid 1px red;
+	outline-style: none;
+}
+
+.postpic{
+	border: dashed 1px red;
+	width: 100%;
+	padding: 0;
+	background-image: url(/image/addpic.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+}
+
+.text-orange{
+	color: orange;
+}
+
+.text-red{
+	color:red;
+}
+
+table{
+	border-bottom: solid 1px #cccccc;
+}
+
+.price{
+	position: absolute;
+	width: 100%;
+	bottom: 10px;
+}
+.price-title{
+	color: white;
+	font-size: 30px;
+	margin-bottom: 25px;
+	position: relative;
+	display: block;
+}
+.price-title:before{
+	content: '';
+	width: 20%;
+	display: block;
+	left: 30px;
+	position: absolute;
+	top: 23px;
+	border-bottom: solid 1px white;
+}
+.price-title:after{
+	content: '';
+	width: 20%;
+	display: block;
+	top: 23px;
+	right: 30px;
+	position: absolute;
+	border-bottom: solid 1px white;
+}
+.price-setting{
+	margin-bottom: 20px;
+	border: none;
+	color: white;
+	width: 100%;
+	font-size: 16px;
+}
+.price-back-img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -100;
+	top:0;
+}
+.price .btn{
+	width: 90%;
+	margin-bottom: 10px;
+	color: red;
+}
+.price .panel-heading{
+	background-color: #EF1C3D;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+.price .panel-body{
+	color: black;
+	font-size: 18px;
+}
+.modal-body {
+	margin: 45% 0 ;
+}
+.modal .btn{
+	color: black;
+}
+
+.price-info{
+	padding-top: 30px;
+}
+.price-info .line1{
+	font-size: 20px;
+}
+.price-info .line2{
+	font-size: 20px;
+	color: red;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.price-info .line3{
+
+}
+.price-info img{
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
