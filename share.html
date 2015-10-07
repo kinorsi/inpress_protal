@@ -75,7 +75,7 @@
 
               <div id="sharebtns">
                 <button class="btn btn-danger btn-block" id="voteBtn">投票</button>
-                <button class="btn btn-warning btn-block">我帮XX老师拉票</button>
+                <button class="btn btn-warning btn-block" id="lapiao">我帮XX老师拉票</button>
               </div>
             </div>
 
@@ -110,7 +110,10 @@
 
     <script>
     $(function(){
-      $('#sharemodal').modal();
+      $('#lapiao').click(function(){
+        $('#sharemodal').modal();
+      });
+      
       $('#sharemodal').click(function(){
         $(this).modal('hide');
       });
