@@ -19,15 +19,35 @@
     <![endif]-->
   </head>
   <body>
+    <div class="price text-center">
+    <div class="modal fade" id="modal-not">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel panel-danger text-center">
+              <div class="panel-heading" style="background-color:red;">
+                <span>照片不够呀~</span>
+              </div>
+              <div class="panel-body">
+                <span>请上传最少三张照片</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-warning btn-lg" style="width:100%" data-dismiss="modal">确定</button>
+      </div>
+    </div><!-- /.modal -->  
+    </div>  
+
     <div class="container">
       <form action="">
         <div class="row" style="padding-top: 20px;">
           <div>
-            <input type="text" class="form-control" name="title"  placeholder="请录入作品主题名称">
-            <input type="text" class="form-control" name="name" placeholder="请录入姓名">
-            <input type="text" class="form-control" name="mobile" placeholder="请录入手机号码">
-            <input type="text" class="form-control" name="school" placeholder="幼儿园名称：例如朝阳区吕家园幼儿园">
-            <input type="text" class="form-control" name="class" placeholder="请录入班级：例如小一班">
+            <input type="text" class="form-control" required='required' name="title"  placeholder="请录入作品主题名称">
+            <input type="text" class="form-control" required='required' name="name" placeholder="请录入姓名">
+            <input type="text" pattern="\d{11}" title="请输入11位手机号" class="form-control" required='required' name="mobile" placeholder="请录入手机号码">
+            <input type="text" class="form-control" required='required' name="school" placeholder="幼儿园名称：例如朝阳区吕家园幼儿园">
+            <input type="text" class="form-control" required='required' name="class" placeholder="请录入班级：例如小一班">
           </div>
         </div>
 
@@ -38,25 +58,13 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-xs-4">
+        <div class="row" id="picGroup">
+          <div class="col-xs-4 picbox">
             <div class="postpic" style="background-image:url(image/addpic.png);">
               <img src="" class="img-preview">
             </div>
-            <input class="img-upload" name="img1" type="file">
-          </div>
-          <div class="col-xs-4">
-            <div class="postpic" style="background-image:url(image/addpic.png);">
-              <img src="" class="img-preview">
-            </div>
-            <input class="img-upload" name="img2" type="file">
-          </div>
-          <div class="col-xs-4">
-            <div class="postpic" style="background-image:url(image/addpic.png);">
-              <img src="" class="img-preview">
-            </div>
-            <input class="img-upload" name="img3" type="file">
-          </div>
+            <input class="img-upload" name="img-1" type="file">
+          </div>      
         </div>
 
         <div class="row">
@@ -90,35 +98,76 @@
     <script src="lib/jquery/jquery-1.11.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-
+    <!--
+    <script src="lib/validator/multifield.js"></script>
+    <script src="lib/validator/validator.js"></script>
+    -->
     <script type="text/javascript">
     $(function(){
+      //增加新的上传
+      var picNumbers = 1;
+      function addPic(){
+        picNumbers++;
+        var html  = 
+          '<div class=\"col-xs-4 picbox\">' +
+            '<div class=\"postpic\" style=\"background-image:url(image/addpic.png);\">' +
+              '<img src=\"\" class=\"img-preview\">' +
+            '</div>' +
+            '<input class=\"img-upload\" name=\"img-' + picNumbers + '\" type=\"file\">' +
+          '</div>';
+
+          $('#picGroup').append(html);
+          $('.postpic').css('height', width);
+      }
+
       var width = $('.postpic').width();
       $('.postpic').css('height', width);
 
-      // $('.postpic').click(function(){
-      //   alert('');
-      // });
+      // $('.btn').click(function(){
+      //   location.href="postinfo.html";
+      // });    
 
-      $('.btn').click(function(){
-        location.href="postinfo.html";
-      });    
-
+      //点击加好触发fileinput
       var preview = null;
-      $('.postpic').click(function(){
+      //是否要增加加号
+      var needToAddPic = false;
+      $(document).on('click', '.postpic', function(){
+      // $('.postpic').click(function(){
         var filebtn = $(this).parent().find('input');
         preview = $(this).find('img');
+        var order = filebtn.attr('name').split('-')[1];
+        needToAddPic=(parseInt(order)===picNumbers);
         $(filebtn).click();
       });  
 
-      $('input[type="file"]').change(function(e, data){
+      //预览功能
+      $(document).on('change', 'input[type="file"]', function(e){
+      // $('input[type="file"]').change(function(e, data){
         var reader = new FileReader();
         reader.onload = function(e){
           $(preview).attr('src', e.target.result);
+          if(needToAddPic && picNumbers<9){
+            addPic();  
+          }
         }
-        var file = e.delegateTarget.files[0];
+        var file = e.target.files[0];
         reader.readAsDataURL(file);
       });
+
+      $('form').submit(function(e){
+        var errorinfo = new Array();
+        e.preventDefault();
+
+        // var valid = validator.checkAll($(this));
+
+        if(picNumbers<4){
+          $('.modal').modal();
+          return false;
+        }
+
+        this.submit();
+      });
+
     });
     </script>
   </body>

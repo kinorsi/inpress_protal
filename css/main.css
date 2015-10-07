@@ -39,7 +39,9 @@ body{
 	background-repeat: no-repeat;
 	background-position: center center;
 }
-
+.picbox{
+	margin-bottom: 10px;
+}
 .index-banner{
 	position: relative;
 }
@@ -215,12 +217,24 @@ input[type="text"]{
 	border-radius: 0;
 	border-bottom: solid 1px #aaaaaa;
 }
-
+input[type="tel"]{
+	border: none;
+	border-radius: 0;
+	border-bottom: solid 1px #aaaaaa;
+}
 input[type="text"]{
 	font-size: 16px;
 	height: 36px;
 }
+input[type="tel"]{
+	font-size: 16px;
+	height: 36px;
+}
 input[type="text"]:focus{
+	border-bottom: solid 1px red;
+	outline-style: none;
+}
+input[type="tel"]:focus{
 	border-bottom: solid 1px red;
 	outline-style: none;
 }
