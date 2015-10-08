@@ -133,7 +133,7 @@ body{
 	right: 10px;
 	color: white;
 	background-color: #000000;
-	opacity: 0.5;
+	/*opacity: 0.5;*/
 	padding: 2px;
 	border-radius: 4px;
 }
