@@ -88,7 +88,7 @@
 
         <div class="row">
           <div class="col-xs-12" style="margin-top:30px;">
-            <button class="btn btn-danger btn-block">确定</button>
+            <button class="btn btn-danger btn-block" id="ok">确定</button>
           </div>
         </div>
       </form>
@@ -158,13 +158,13 @@
         var errorinfo = new Array();
         e.preventDefault();
 
-        // var valid = validator.checkAll($(this));
-
         if(picNumbers<4){
           $('.modal').modal({backdrop: 'static'});
           return false;
         }
 
+        $('#ok').addClass('disabled'); //使按钮无效，removeClass('disabled')则可以有效
+        $('#ok').text('作品提交中....');//直接修改文字 
         this.submit();
       });
 
