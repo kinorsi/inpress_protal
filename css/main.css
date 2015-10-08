@@ -45,16 +45,18 @@ body{
 .index-banner{
 	position: relative;
 }
+.index-banner div{
+	position: absolute;
+	top: 75%;
+}
 .index-banner .btn{
 	font-weight: bold;
 	background-color: yellow;
 	padding-left: 40px;
 	padding-right: 40px;
-	position: absolute;
-	top: 75%;
-	left: 30%;
 	font-size: 16;
 }
+
 .index-setting{
 	position: relative;
 }
