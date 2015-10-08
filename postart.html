@@ -154,18 +154,24 @@
         reader.readAsDataURL(file);
       });
 
+      var canSubmit = true;
       $('form').submit(function(e){
         var errorinfo = new Array();
         e.preventDefault();
 
-        if(picNumbers<4){
-          $('.modal').modal({backdrop: 'static'});
+        // if(picNumbers<4){
+        //   $('.modal').modal({backdrop: 'static'});
+        //   return false;
+        // }
+        if(canSubmit){
+          $('#ok').addClass('disabled'); //使按钮无效，removeClass('disabled')则可以有效
+          $('#ok').text('作品提交中....');//直接修改文字 
+          canSubmit = false;
+          this.submit();
+        }else{
           return false;
         }
-
-        $('#ok').addClass('disabled'); //使按钮无效，removeClass('disabled')则可以有效
-        $('#ok').text('作品提交中....');//直接修改文字 
-        this.submit();
+        
       });
 
     });
