@@ -21,16 +21,18 @@
   </head>
   <body>
     <div class="price text-center">
-      <div class="modal fade" id="modal-not">
+      <div class="modal fade" id="errmodal">
         <div class="modal-body">
           <div class="row">
             <div class="col-xs-12">
               <div class="panel panel-danger text-center">
                 <div class="panel-heading" style="background-color:red;">
-                  <span>照片不够呀~</span>
+                  <span>提示~</span>
                 </div>
-                <div class="panel-body">
-                  <span>请上传最少三张照片</span>
+                <div class="panel-body text-left">
+                  <ul id="errMsg" class="list-unstyled">
+                    
+                  </ul>
                 </div>
               </div>
             </div>
@@ -39,9 +41,26 @@
         </div>
       </div><!-- /.modal -->  
     </div>  
-
+    <div class="price text-center">
+      <div class="modal fade" id="loading">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel panel-danger text-center">
+                <div class="panel-heading" style="background-color:red;">
+                  <span>提示~</span>
+                </div>
+                <div class="panel-body text-left">
+                  <span>作品提交中。。。</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.modal -->  
+    </div>  
     <div class="container">
-      <form action="">
+      <form action="" novalidate>
         <div class="row" style="padding-top: 20px;">
           <div>
             <input type="text" class="form-control" maxlength="10" title="不能为空" required='required' name="title"  placeholder="请录入作品主题名称">
@@ -99,10 +118,6 @@
     <script src="lib/jquery/jquery-1.11.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <!--
-    <script src="lib/validator/multifield.js"></script>
-    <script src="lib/validator/validator.js"></script>
-    -->
     <script type="text/javascript">
     $(function(){
       //增加新的上传
@@ -160,19 +175,50 @@
         var errorinfo = new Array();
         e.preventDefault();
 
+        var errMsg = new Array();
+
+        var valiTitle = $('input[name="title"]')[0].validity;
+        if(valiTitle.valueMissing){
+          errMsg.push("标题不能为空");
+        }
+
+        var valiName = $('input[name="name"]')[0].validity;
+        if(valiName.valueMissing){
+         errMsg.push("名字不能为空"); 
+        }
+        var valiSchool = $('input[name="school"]')[0].validity;
+        if(valiSchool.valueMissing){
+         errMsg.push("幼儿园名字不能为空"); 
+        }
+        var valiClass = $('input[name="class"]')[0].validity;
+        if(valiClass.valueMissing){
+         errMsg.push("班级不能为空"); 
+        }
+        var valiMobile = $('input[name="mobile"]')[0].validity;
+        if(valiMobile.valueMissing){
+          errMsg.push('电话不能为空');
+        }
+        if(valiMobile.patternMismatch){
+          errMsg.push('电话号码格式不正确');
+        }
+
         if(picNumbers<4){
-          $('.modal').modal({backdrop: 'static'});
+          errMsg.push("至少上传三张照片");
+          // $('.modal').modal({backdrop: 'static'});
+        }
+
+        if(errMsg.length > 0){
+          $('#errMsg').empty();
+          for(var i=0; i<errMsg.length; i++){
+            $('#errMsg').append("<li>" + errMsg[i] + "</li>");
+          }
+          $('#errmodal').modal({backdrop:'static'});
           return false;
         }
-        if(canSubmit){
-          $('#ok').addClass('disabled'); //使按钮无效，removeClass('disabled')则可以有效
-          $('#ok').text('作品提交中....');//直接修改文字 
-          canSubmit = false;
-          this.submit();
-        }else{
-          return false;
-        }
-        
+
+        // this.submit();
+        $('#loading').modal({backdrop: 'static'});
+        //$('#loading').modal('hide');//提交成功后，如要隐藏，就用这样的代码。
       });
 
     });
