@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-language" content="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>投稿：上传主题墙照片</title>
@@ -159,10 +160,10 @@
         var errorinfo = new Array();
         e.preventDefault();
 
-        // if(picNumbers<4){
-        //   $('.modal').modal({backdrop: 'static'});
-        //   return false;
-        // }
+        if(picNumbers<4){
+          $('.modal').modal({backdrop: 'static'});
+          return false;
+        }
         if(canSubmit){
           $('#ok').addClass('disabled'); //使按钮无效，removeClass('disabled')则可以有效
           $('#ok').text('作品提交中....');//直接修改文字 
