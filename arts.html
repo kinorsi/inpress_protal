@@ -57,7 +57,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" id="arts">
           <!--更多作品请重复art-->
           <div class="art">
             <div class="order">排名:1152</div>
@@ -95,8 +95,8 @@
             </div>
           </div>
 
-          <div class="text-center"><button id="loadmore" class="btn btn-default btn-block" disabled>加载更多</button></div>
         </div>
+        <div class="text-center"><button id="loadmore" class="btn btn-default btn-block">加载更多</button></div>
       </div>
     </div>
 
@@ -111,11 +111,54 @@
         $(this).addClass('active');
       });
 
+      //当前页面
+      var curPage = 1;
+      //部页数
       $('#loadmore').click(function(){
-        alert('');
+        $('#loadmore').text('加载中。。。');
+        $('#loadmore').addAttr('disabled');
+
+        $.getJSON('url to load page', {curPage: curPage}, function(arts){
+          curPage = arts.curPage;//加载出来的最后一页。
+          //arts 就是返回来的数据
+          var html = null;
+
+          for(var i=0; i< arts.length; i++){
+            html = '<div class=\"art\">'
+            '<div class=\"order\">排名:'+ arts[i].paiming +'</div>' + 
+            '<img src=\"' + arts[i].picUrl + '\" class=\"img-fit\">' +
+            '<div class=\"info\">' +
+              '<div class=\"row\">' + 
+                '<div class=\"col-xs-4 place\"><span class=\"name\">'+arts[i].name+'</span></div>' + 
+                '<div class=\"col-xs-5\"><span class=\"artno\">作品编号：'+arts[i].bianhao+'</span></div>' +
+                '<div class=\"col-xs-3 text-center\">'+arts[i].piaoshu+'票</div>' + 
+              '</div>' + 
+            '</div>' + 
+            '<div class=\"info2\">' +
+              '<div class=\"row\">' + 
+                '<div class=\"col-xs-9 place\"><img src=\"image/anchor.png\" width=\"12px\"> <span>'+arts[i].address+'</span></div>'+
+                '<div class=\"col-xs-3 text-center\"><button class=\"btn btn-xs btn-default btn-vote\">投票</button></div>'+
+              '</div>'+
+            '</div>'+
+          '</div>';
+
+            $('#arts').append(html);
+
+            $('#loadmore').removeAttr('disabled');
+            $('#loadmore').text('加载更多')
+            //$('#loadmore').text('没有更多了')//如果没有更多了
+          }
+
+        }, function(){
+          alert('error');
+        });
+
+
       });
 
-      $('.btn-vote').click(function(){
+      //这个也改成这样了，这样新加进来的元素才会有对应的功能。
+      $('document').on('click', '.btn-vote', function(){
+      // $('.btn-vote').click(function(){
         $.ajax({
           url: '',
           type: 'POST',
