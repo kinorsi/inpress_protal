@@ -180,6 +180,7 @@ body{
 .author .info{
 	margin-bottom: 20px;
 	margin-top: 20px;
+	line-height: 30px;
 }
 .author .btn-warning{
 	color: red;
