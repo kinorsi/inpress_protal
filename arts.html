@@ -95,8 +95,10 @@
             </div>
           </div>
 
+
+          <button id="loadmore" class="btn btn-default btn-block">加载更多</button>
         </div>
-        <div class="text-center"><button id="loadmore" class="btn btn-default btn-block">加载更多</button></div>
+        <!-- <div class="text-center"><button id="loadmore" class="btn btn-default btn-block">加载更多</button></div> -->
       </div>
     </div>
 
@@ -142,7 +144,8 @@
             '</div>'+
           '</div>';
 
-            $('#arts').append(html);
+            // $('#arts').append(html);
+            $('#loadmore').before(html);
 
             $('#loadmore').removeAttr('disabled');
             $('#loadmore').text('加载更多')
