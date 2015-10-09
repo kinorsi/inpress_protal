@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="css/main.css">
     <style>
     body{
-      background-image: url(image/bg.png);
-      background-repeat: repeat-y;
-      background-size: 100%;
     }
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -28,11 +25,10 @@
     <div class="container">
       <div class="row index-banner text-center">
           <img src="image/index_banner.png" class="img-fit  " alt="">
-          <button class="btn">我要参赛</button>
+          <div class="col-xs-12"><button class="btn">我要参赛</button></div>
       </div>
 
       <div class="row index-setting">
-        <!-- <img src="image/jiangxiang.png" class="img-fit" alt=""> -->
         <div class="rolling2">
           <marquee behavior="" direction="left">
             <span class="content">
@@ -40,19 +36,43 @@
             </span>
           </marquee>
         </div>
-        <span class="subtitle" style="background-image: url(image/subtitle_bg.png);">大赛奖项</span>
-        <div class="row text-center">
-          <div class="col-xs-4">
-            <img src="image/red_win.png" width="60%" alt="">
+        <div class="subtitlediv"><span class="subtitle" style="background-image: url(image/subtitle_bg.png);">大赛奖项</span></div>
+<!--         <div class="row text-center">
+          <div class="col-xs-4" style="padding-right:0;margin-right:-10px;">
+
           </div>
-          <div class="col-xs-4">
-            <img src="image/green_win.png" width="60%" alt="">
+          <div class="col-xs-4" style="padding-left:0; padding-right:0">
+            <img src="image/green_win.png" width="50" alt="" >
+            <span class="jiangxiang">人气奖（6名）</span>
+            <div><span class="money">奖金：</span><span class="money2">￥1000</span></div>            
           </div>
-          <div class="col-xs-4">
-            <img src="image/yellow_win.png" width="60%" alt="">
+          <div class="col-xs-4" style="padding-left:0; margin-left:-10px;">
+            <img src="image/yellow_win.png" width="50" alt="" >
+            <span class="jiangxiang">园丁奖（30名）</span>
+            <div><span class="money">奖金：</span><span class="money2">￥1000</span></div>            
           </div>
-        </div>
-        <div class="info2">
+        </div> -->
+        <table width="100%" class="text-center" style="border:none">
+          <tr>
+            <td>
+              <img src="image/red_win.png" width="50" alt="">
+              <span class="jiangxiang">入围奖（60名）</span>
+              <div><span class="money">奖金：</span><span class="money2">￥500</span></div>              
+            </td>
+            <td>
+               <img src="image/green_win.png" width="50" alt="" >
+              <span class="jiangxiang">人气奖（6名）</span>
+              <div><span class="money">奖金：</span><span class="money2">￥1000</span></div>        
+            </td>
+            <td>
+              <img src="image/yellow_win.png" width="50" alt="" >
+              <span class="jiangxiang">园丁奖（30名）</span>
+              <div><span class="money">奖金：</span><span class="money2">￥1000</span></div>                
+            </td>
+          </tr>
+        </table>
+        <p style="margin-top:10px; padding-left:12px;padding-right:12px;">说明：入围奖、人气奖、园丁奖，奖项不重复，按照奖金额度最大定获得奖项。500元的奖金实际为JD的500元购物卡，1000元奖金实际为JD的1000元购物卡。<br/>所有参赛用户皆可获得300幼师宝典APP积分奖励及一次抽奖机会。</p>
+        <div class="info2" style="padding-left:12px;padding-right:12px;">
           <div><a href="rule.html">查看参赛规则 &gt;</a></div>
           <div><a href="arts.html">查看全部 <span>200</span> 件参赛作品 &gt;</a></div>
         </div>
@@ -66,5 +86,16 @@
     <script src="lib/jquery/jquery-1.11.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+        $('.btn').click(function(){
+          location.href="postart.html";
+        });
+
+        $('marquee').click(function(){
+          location.href="lucky.html";
+        });
+      });
+    </script>
   </body>
 </html>
