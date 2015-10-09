@@ -14,6 +14,32 @@
     body{
       background-color: white;
     }
+    p{
+      margin-left: 14px;
+      font-size: 16px;
+    }
+    .redblock{
+      background-color: #ff5742; 
+      color:white;
+      padding-bottom: 10px;
+      border: solid 1px #ff5742;
+    }
+    .red img{
+      width: 40px;
+    }
+    .white{
+      padding-bottom: 10px; 
+    }
+    .white img{
+      width: 40px;
+    }
+    h3{
+      margin-left: 12px;
+    }
+    .number{
+      width: 50px;
+      margin-left: 12px;
+    }
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,17 +50,108 @@
   </head>
   <body>
     <div class="container">
-      <div class="rule">
-        <h4>大赛时间计划</h4>
-        <table>
+      <div class="row index-setting">
+        
+        <div class="redblock">
+          <h3><img src="image/time_icon.png" width="40" alt=""> 大赛时间计划</h3>
+          <table width="100%" style="border:none">
+            <tr>
+              <td width="70"><img src="image/1.png" class="number" alt=""></td>
+              <td><p>2015年8月18日 - 10月30日</p></td>
+            </tr>
+            <tr>
+              <td class="text-center" style="padding:6px;"><img src="image/line.png" width="10" alt=""></td>
+              <td><p>下载幼师APP提交参赛作品，网络投票选取30件人气作品、人工筛选30件作品入围</p></td>
+            </tr>
+            <tr>
+              <td><img src="image/2.png" class="number" alt=""></td>
+              <td><p>2015年10月31日 - 11月6日</p></td>
+            </tr>
+            <tr>
+              <td class="text-center" style="padding:6px;"><img src="image/line.png" width="10" alt=""></td>
+              <td><p>专家对60件入围作品评审，人气作品前6名获得人气奖，剩余54件作品选出30名园丁奖</p></td>
+            </tr>   
+            <tr>
+              <td><img src="image/3.png" class="number" alt=""></td>
+              <td><p>2015年11月7日</p></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><p>颁奖典礼</p></td>
+            </tr>                      
+          </table>
+        </div>
+
+        <div>
+        <h3><img src="image/jiangxiang_icon.png" class="" width="40" alt=""><span> 大赛奖项</span></h3>
+        <table width="100%" class="text-center" style="border:none">
           <tr>
-            <td><span class="order">01</span></td>
-            <td>2015年8月18日 - 10月30日<br>下载幼师宝典APP提交参赛作品，网络投票选取30件人气作品、人工筛选30件作品入围</td>
+            <td>
+              <img src="image/red_win.png" width="50" alt="">
+              <span class="jiangxiang">入围奖（60名）</span>
+              <div><span class="money">奖金:</span><span class="money2">￥500</span></div>              
+            </td>
+            <td>
+               <img src="image/green_win.png" width="50" alt="" >
+              <span class="jiangxiang">人气奖（6名）</span>
+              <div><span class="money">奖金:</span><span class="money2">￥1000</span></div>        
+            </td>
+            <td>
+              <img src="image/yellow_win.png" width="50" alt="" >
+              <span class="jiangxiang">园丁奖（30名）</span>
+              <div><span class="money">奖金:</span><span class="money2">￥1000</span></div>                
+            </td>
           </tr>
         </table>
+        <p style="margin-top:10px;">说明：入围奖、人气奖、园丁奖，奖项不重复，按照奖金额度最大定获得奖项。<span class="redtext">500</span>元的奖金实际为JD的<span class="redtext">500</span>元购物卡，<span class="redtext">1000</span>元奖金实际为JD的<span class="redtext">1000</span>元购物卡。<br/>所有参赛用户皆可获得<span class="redtext">300</span>幼师宝典APP积分奖励及一次抽奖机会。</p>
+        </div>
+
+        <div class="wave" style="background-image: url(image/wave.png)"></div>
+        <div class="redblock">
+          <h3><img src="image/zhengji_icon.png" class="" width="40" alt=""><span> 征集内容及对象</span></h3>
+          <p>参赛作品需以幼儿园室内主题墙布置为主题，可肆意发挥想象，创作属于你独特的风格主题墙<br/>幼儿园老师以班级为单位报名</p>
+        </div>
+
+        <div class="white">
+          <h3><img src="image/upload_icon.png" width="40" alt=""><span> 作品上传要求</span></h3>
+          <p>
+            参赛作品以内定主题墙布置为主题，至少上传三张照片；作品图片必须为JPG或PNG格式；图片尺寸必须大于780*420像素
+          </p>
+        </div>
+
+        <div class="wave" style="background-image: url(image/wave.png)"></div>
+        <div class="redblock">
+          <h3><img src="image/audit.png" width="40" alt=""> 评审要求</h3>
+          <p>
+            评审作品需体现教育性、经济性、美观性、创新性、体现幼儿在环境中的主体性，体现师幼互动、共同合作
+          </p>
+        </div>
+
+        <div class="white">
+          <h3><img src="image/toupiao_icon.png" width="40" alt=""> 网上投票规则</h3>
+          <p>
+            1:仅限使用幼师宝典APP或通过微信、QQ投票<br/>
+            2:每个幼师宝典APP/微信/QQ帐号每个作品限投一次<br/>
+            3:严禁采取技术性手段刷票舞弊，一经查实，奖取消参赛资格<br/>
+            4:投票截止日期: 2015年10月30日24:00
+          </p>
+        </div>
+
+        <div class="wave" style="background-image: url(image/wave.png)"></div>  
+        <div class="redblock bg">
+          <h3><img src="image/right_icon.png" width="40" alt=""> 版权声明</h3>
+          <p>参赛作品需是参赛者原创作品，未在媒体公开发表。所有参赛作品的著作权归原作者所有，幼师宝典拥有参赛作品使用权。</p>
+        </div>
+
+        <div class="white">
+          <h3><img src="image/lianxi_icon.png" width="40" alt=""> 组织机构</h3>
+          <p>
+            联系人 : 张老师<br/>
+            电话 : 010-65499311
+            邮箱 : hcds@xbdeud.cn
+          </p>
+        </div>
       </div>
-
-
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

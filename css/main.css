@@ -388,3 +388,8 @@ table{
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+.wave{
+	/*background-image: url(./image/wave.png);*/
+	height: 20px;
+	background-repeat: repeat-x;
+}
