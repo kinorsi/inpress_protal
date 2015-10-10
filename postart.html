@@ -207,6 +207,21 @@
           // $('.modal').modal({backdrop: 'static'});
         }
 
+        var picfiles = $('input[type="file"]');
+        for(var i=0; i<picfiles.length; i++){
+          var file = picfiles[i];
+          if(file.files.length>0){
+            //检查文件名
+            var filename = file.files[0].name;
+            var suffixs = filename.split('.');
+            var suffix = suffixs[suffixs.length-1].toLowerCase();
+            if(suffix !== 'png' && suffix !== 'jpg'){
+              errMsg.push("第" + (i + 1) + "张图片的格式不正确");
+            }
+          }
+        }
+
+
         if(errMsg.length > 0){
           $('#errMsg').empty();
           for(var i=0; i<errMsg.length; i++){
