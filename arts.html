@@ -16,6 +16,7 @@
         background-color: #eeeeee;
       }
     </style>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -61,7 +62,7 @@
           <!--更多作品请重复art-->
           <div class="art">
             <div class="order">排名:1152</div>
-            <img src="image/Desert.jpg" class="img-fit">
+            <img onload="imgloaded(this)" src="http://pic1.win4000.com/wallpaper/f/51c3bb99a21ea.jpg" class="img-fit">
             <div class="info">
               <div class="row">
                 <div class="col-xs-4 place"><span class="name">李小龙</span></div>
@@ -79,7 +80,7 @@
 
           <div class="art">
             <div class="order">排名:1152</div>
-            <img src="image/Desert.jpg" class="img-fit">
+            <img onload="imgloaded(this)" src="image/Desert.jpg" class="img-fit">
             <div class="info">
               <div class="row">
                 <div class="col-xs-4 place"><span class="name">李小龙</span></div>
@@ -107,10 +108,33 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+    function imgloaded(img){
+      $(img).parent().show();
+    }
+
     $(function(){
+
+
+
       $('.btn-order').click(function(){
         $('.btn-order').removeClass('active');
         $(this).addClass('active');
+      });
+
+      // $(document).on('load', 'img', function(){
+      //   console.log(this);
+      // });
+
+      // img2.onload = function (){
+      //   alert($(this).attr('src'));
+      // }
+
+      // $('.artimg').imagesLoaded(function(){
+      //   alert($(this).attr('src'));
+      // });
+
+      $('document').on('imagesLoaded', '.artimg', function(){
+        alert($(this).attr('src'));
       });
 
       //当前页面
@@ -126,7 +150,7 @@
           var html = null;
 
           for(var i=0; i< arts.length; i++){
-            html = '<div class=\"art\">'
+            html = '<div onload=\"imgloaded(this)\" class=\"art\">'
             '<div class=\"order\">排名:'+ arts[i].paiming +'</div>' + 
             '<img src=\"' + arts[i].picUrl + '\" class=\"img-fit\">' +
             '<div class=\"info\">' +

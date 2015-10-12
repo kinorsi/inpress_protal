@@ -152,6 +152,7 @@ body{
 	margin-top: 10px;
 	padding-bottom: 4px;
 	position: relative;
+	display: none;
 }
 .art .order{
 	position: absolute; 
