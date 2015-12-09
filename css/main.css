@@ -4,6 +4,7 @@
 
 .img-fit{
     width: 100%;
+    min-height: 100px;
 }
 
 body{
@@ -152,7 +153,7 @@ body{
 	margin-top: 10px;
 	padding-bottom: 4px;
 	position: relative;
-	display: none;
+	/*display: none;*/
 }
 .art .order{
 	position: absolute; 
